@@ -60,11 +60,17 @@ The accuracy is only 47% which is a very low value.
 
 
 To increase the performance of the model, I applied bucketing to the feature ASK_AMT and organized the different values by intervals.
-I also increased the number of neurons on the hidden layers, trying out several models and finally I used a model with four hidden layers, along with changing the activation functions. 
+I also increased the number of neurons on the hidden layers, trying out several models and finally I used a model with four hidden layers, with varying numbers of neurons in each layer and while mostly using the sigmoid activation function, I tried the tanh activation function on the 4th hidden layer. I did not know enough to have a plan - I just tried out several numbers of layers, neurons and mixtures of activation functions before I got close to 75% accuracy. Then I stopped.
+
 <br>
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/finalNN.PNG" alt="final attempt" >
 <br>
 
+The results of this model are much better than my first model: 
+
+<br>
+<img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/finalNNresults.PNG" alt="final attempt" >
+<br>
 
 
 
