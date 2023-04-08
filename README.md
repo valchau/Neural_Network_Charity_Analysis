@@ -20,16 +20,17 @@ Websites: https://www.geeksforgeeks.org/ways-to-import-csv-files-in-google-colab
 
 ## Results
 ### Data Preprocessing
+1. What variables are neither target nor features? 
 The columns EIN and NAME are identification information and have been removed from the input data, using this code:
 <br>
 application_df= application_df.drop(['EIN', 'NAME'],1)
 <br>
-
+2. What variables are the features?
 The following variables APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT are the features (independent variables) to be used in the model. <hr>
 <br>
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/features.PNG" alt="features" >
 <br>
-
+3. What variables are the target?
 The column IS_SUCCESSFUL contains binary data refering to whether the charity donation was used effectively. This variable is the target (dependent variable) for our deep learning neural network. The following Python code shows how this analysis used this target variable:
 <hr>
 Split our preprocessed data into our features(X) and target(y) arrays
@@ -42,12 +43,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=78)
 Now, encoding of the categorical variables, splitting the target variable into training and testing datasets and standardization have been applied. We are ready to create the neural network model and use it.
 
 ### Compiling, Training, and Evaluating the Model
-The first deep-learning neural network model is comprised of two hidden layers with 80 and 20 neurons respectively. The output layer is made of a unique neuron as it is a binary classification. To speed up the training process, we are using the activation functions sigmoid and relu for the hidden layers.
+The first deep-learning neural network model is comprised of two hidden layers each with its own activation function, with 80 and 20 neurons respectively in the two layers. The output layer is made up of a binary classification so it uses a linear model. To speed up the training process, we are using the activation functions sigmoid and relu for the hidden layers.
 
 <br>
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNN.PNG" alt="first attempt" >
 <br>
-
 
 The compiler used is adam with loss binary_crossentropy
 nn.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
@@ -60,7 +60,9 @@ The accuracy is only 47% which is a very low value.
 
 
 To increase the performance of the model, I applied bucketing to the feature ASK_AMT and organized the different values by intervals.
-We increased the number of neurons on the hidden layers, then we used a model with four hidden layers, along with changing the activation functions.
+I also increased the number of neurons on the hidden layers, trying out several models and finally I used a model with four hidden layers, along with changing the activation functions. 
+
+
 
 
 
