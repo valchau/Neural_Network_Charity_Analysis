@@ -23,6 +23,7 @@ Websites: https://www.geeksforgeeks.org/ways-to-import-csv-files-in-google-colab
 The columns EIN and NAME are identification information and have been removed from the input data, using this code:
 
 Drop the non-beneficial ID columns, 'EIN' and 'NAME'
+<br>
 application_df= application_df.drop(['EIN', 'NAME'],1)
 <br>
 The following columns APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT are the features for our model. <hr>
