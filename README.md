@@ -16,13 +16,18 @@ I learned the background and history of computational neurons as well as current
 ### Resources
 Data Source: charity_data.csv
 Software: Python 3.9, google's colab: https://colab.research.google.com/drive
-Websites: https://www.geeksforgeeks.org/ways-to-import-csv-files-in-google-colab/#,  http://neuralnetworksanddeeplearning.com/
+Websites: https://www.geeksforgeeks.org/ways-to-import-csv-files-in-google-colab/#,  http://neuralnetworksanddeeplearning.com/, https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6#:~:text=The%20ReLU%20is%20the%20most,neural%20networks%20or%20deep%20learning
 
 ## Results
 ### Data Preprocessing
-The columns EIN and NAME are identification information and have been removed from the input data.
+The columns EIN and NAME are identification information and have been removed from the input data, using this code:
+
+# Drop the non-beneficial ID columns, 'EIN' and 'NAME'.
+application_df= application_df.drop(['EIN', 'NAME'],1)
+
 
 The column IS_SUCCESSFUL contains binary data refering to weither or not the charity donation was used effectively. This variable is then considered as the target for our deep learning neural network.
+
 
 The following columns APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT are the features for our model.
 
