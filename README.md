@@ -25,18 +25,22 @@ The columns EIN and NAME are identification information and have been removed fr
 application_df= application_df.drop(['EIN', 'NAME'],1)
 <br>
 
-The following columns APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT are the features for our model. <hr>
+The following variables APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT are the features (independent variables) to be used in the model. <hr>
 <br>
 
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/features.PNG" alt="features" >
 <br>
 
-The column IS_SUCCESSFUL contains binary data refering to weither or not the charity donation was used effectively. This variable is then considered as the target for our deep learning neural network.
+The column IS_SUCCESSFUL contains binary data refering to whether the charity donation was used effectively. This variable is the target (dependent variable) for our deep learning neural network. The following Python code shows how this analysis used this target variable:
+<hr>
+Split our preprocessed data into our features(X) and target(y) arrays
+y = application_df.IS_SUCCESSFUL
+X = application_df.drop(columns="IS_SUCCESSFUL")
 
+Split the preprocessed data into a training and testing dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=78)
 
-
-
-Encoding of the categorical variables, spliting into training and testing datasets and standardization have been applied to the features.
+Now, encoding of the categorical variables, splitting the target variable into training and testing datasets and standardization have been applied. We are ready to create the neural network model and use it.
 
 ### Compiling, Training, and Evaluating the Model
 The first two deep-learning neural network models are comprised of two hidden layers with 80 and 30 neurons respectively.
