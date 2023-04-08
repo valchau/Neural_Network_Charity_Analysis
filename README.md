@@ -43,18 +43,20 @@ Now, encoding of the categorical variables, splitting the target variable into t
 
 ### Compiling, Training, and Evaluating the Model
 The first deep-learning neural network model is comprised of two hidden layers with 80 and 20 neurons respectively. The output layer is made of a unique neuron as it is a binary classification. To speed up the training process, we are using the activation functions sigmoid and relu for the hidden layers.
+
 <br>
-<img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNN.PNG)" alt="first neural network" >
+<img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNN.PNG" alt="first attempt" >
 <br>
 
 
 The compiler used is adam with loss binary_crossentropy
 nn.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-The accuracy is only 47% which is a very low value.
+<br>
+<img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNNresults.PNG" alt="first attempt" >
+<br>
 
-268/268 - 0s - loss: 8.2242 - accuracy: 0.4668 - 477ms/epoch - 2ms/step
-Loss: 8.224241256713867, Accuracy: 0.46682214736938477
+The accuracy is only 47% which is a very low value.
 
 
 To increase the performance of the model, I applied bucketing to the feature ASK_AMT and organized the different values by intervals.
