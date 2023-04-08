@@ -71,7 +71,7 @@ The results of this model are much better than my first model:
 <br>
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/finalNNresults.PNG" alt="final attempt" >
 <br>
-
+ The accuracy is now 72% which is much better than the first attempt. 
 
 
 ## Summary
