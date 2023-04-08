@@ -22,7 +22,8 @@ Websites: https://www.geeksforgeeks.org/ways-to-import-csv-files-in-google-colab
 ### Data Preprocessing
 The columns EIN and NAME are identification information and have been removed from the input data, using this code:
 
-# Drop the non-beneficial ID columns, 'EIN' and 'NAME'.
+**Drop the non-beneficial ID columns, 'EIN' and 'NAME'
+**
 application_df= application_df.drop(['EIN', 'NAME'],1)
 <br>
 <img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/features.PNG" alt="features" >
