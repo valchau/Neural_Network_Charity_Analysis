@@ -44,15 +44,23 @@ Now, encoding of the categorical variables, splitting the target variable into t
 ### Compiling, Training, and Evaluating the Model
 The first deep-learning neural network model is comprised of two hidden layers with 80 and 20 neurons respectively. The output layer is made of a unique neuron as it is a binary classification. To speed up the training process, we are using the activation functions sigmoid and relu for the hidden layers.
 <br>
-<img src="[https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/features.PNG](https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNN.PNG)" alt="first neural network" >
+<img src="https://github.com/valchau/Neural_Network_Charity_Analysis/blob/main/firstNN.PNG)" alt="first neural network" >
 <br>
 
-The model accuracy is way under 75%. This is not a satisfying performance to help predict the outcome of the charity donations.
 
-To increase the performance of the model, we applied bucketing to the feature ASK_AMT and organized the different values by intervals.
-We increased the number of neurons on one of the hidden layers, then we used a model with three hidden layers.
+The compiler used is adam with loss binary_crossentropy
+nn.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-We also tried a different activation function (tanh) but none of these steps helped improve the model's performance.
+The accuracy is only 47% which is a very low value.
+
+268/268 - 0s - loss: 8.2242 - accuracy: 0.4668 - 477ms/epoch - 2ms/step
+Loss: 8.224241256713867, Accuracy: 0.46682214736938477
+
+
+To increase the performance of the model, I applied bucketing to the feature ASK_AMT and organized the different values by intervals.
+We increased the number of neurons on the hidden layers, then we used a model with four hidden layers, along with changing the activation functions.
+
+
 
 ## Summary
 The deep learning neural network model did not reach the target of 75% accuracy, but I was able to get 72% accuracy. Considering that this target level is pretty average we could say that the model is not the best. Since this task is a binary classification situation, it could use a supervised machine learning model such as the Random Forest Classifier to combine a multitude of decision trees to generate a classified output and evaluate its performance against the deep learning model.
